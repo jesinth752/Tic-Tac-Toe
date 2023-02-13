@@ -18,11 +18,24 @@ class GameFunction
     char blocknumber;
     char player;
     StringBuilder row0=new StringBuilder("");
-    String row1="";
-    String row2="";
-
-    String dia2="";
-    String dia1="";
+    StringBuilder row1=new StringBuilder("");
+    StringBuilder row2=new StringBuilder("");
+     StringBuilder col0=new StringBuilder("");
+    StringBuilder col1=new StringBuilder("");
+    StringBuilder col2=new StringBuilder("");
+ 
+  
+    StringBuilder dia1=new StringBuilder("");
+    StringBuilder dia2=new StringBuilder("");
+    String r0;
+    String r1;
+    String r2;
+    String d1;
+    String d2;
+    String c0;
+    String c1;
+    String c2;
+ 
 
     String col0="";
     String col1="";
@@ -65,30 +78,33 @@ class GameFunction
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (j == 0) {
-                    col0 = col0 + t[i][j];
-
+                    
+                    col0.append(t[i][j]);
                 } else if (j== 1) {
-                    col1 = col1 + t[i][j];
+                     col1.append(t[i][j]);
                 } else {
-                    col2 = col2 + t[i][j];
+                     col2.append(t[i][j]);
                 }
 
             }
+            c0=col0.toString();
+            c1=col1.toString();
+            c2=col2.toString();
 
-            if (col0.equals("xxx")) {
+            if (c0.equals("xxx")) {
                 bool2=1;
 
-            } else if (col0.equals("ooo")) {
+            } else if (c0.equals("ooo")) {
                 bool2= 2;
             }
-            if (col1.equals("xxx")) {
+            if (c1.equals("xxx")) {
                 bool2= 1;
-            }else if (col1.equals("ooo")) {
+            }else if (c1.equals("ooo")) {
                 bool2= 2;
             }
-            if (col2.equals("xxx")) {
+            if (c2.equals("xxx")) {
                 bool2= 1;
-            } else if (col2.equals("ooo")) {
+            } else if (c2.equals("ooo")) {
                 bool2= 2;
             }
 
@@ -105,27 +121,29 @@ class GameFunction
                    row0.append(t[i][j]);
 
                } else if (i == 1) {
-                   row1 = row1 + t[i][j];
+                   row1.append(t[i][j]);
                } else {
-                   row2 = row2 + t[i][j];
+                   row2.append(t[i][j]);
                }
 
            }
-           String r0=row0.toString();
+            r0=row0.toString();
+            r1=row0.toString();
+            r2=row0.toString();
            if (r0.equals("xxx")) {
                bool=1;
 
-           } else if (row0.equals("ooo")) {
+           } else if (r0.equals("ooo")) {
                bool= 2;
            }
-           if (row1.equals("xxx")) {
+           if (r1.equals("xxx")) {
               bool= 1;
-           }else if (row1.equals("ooo")) {
+           }else if (r1.equals("ooo")) {
               bool= 2;
            }
-           if (row2.equals("xxx")) {
+           if (r2.equals("xxx")) {
              bool= 1;
-           } else if (row2.equals("ooo")) {
+           } else if (r2.equals("ooo")) {
               bool= 2;
            }
 
@@ -141,22 +159,24 @@ class GameFunction
            {
                if(i+j==2)
                {
-                   dia2=dia2+t[i][j];
+                   dia2.append(t[i][j]);
                }
                 if(i==j)
                {
-                   dia1=dia1+t[i][j];
+                   dia1.append(t[i][j]);
                }
            }
-           if (dia1.equals("xxx")) {
+           d2=dia2.toString();
+           d1=dia1.toString();
+           if (d1.equals("xxx")) {
                bool1=1;
 
-           } else if (dia1.equals("ooo")) {
+           } else if (d1.equals("ooo")) {
                bool1= 2;
            }
-           if (dia2.equals("xxx")) {
+           if (d2.equals("xxx")) {
                bool1= 1;
-           }else if (dia2.equals("ooo")) {
+           }else if (d2.equals("ooo")) {
                bool1= 2;
            }
        }
@@ -185,8 +205,8 @@ class GameFunction
             player=input.next().charAt(0);
             for (int i=0;i<3;i++) {
                 for (int j = 0; j < 3; j++) {
-                    if (t[i][j] == Blocknumber) {
-                        t[i][j] = Player;
+                    if (t[i][j] == blocknumber) {
+                        t[i][j] = player;
                     }
                 }
             }
@@ -233,14 +253,15 @@ class GameFunction
 
 
             time++;
-            row0.delete(0,r.length());
-            row1="";
-            row2="";
-            dia1="";
-            dia2="";
-            col0="";
-            col1="";
-            col2="";
+            row0.delete(0,r0.length());
+            row1.delete(0,r1.length());
+            row2.delete(0,r2.length());
+            dia1.delete(0,d1.length());
+            dia2.delete(0,d2.length());
+            col0.delete(0,c0.length());
+            col1.delete(0,c1.length());
+            col2.delete(0,c2.length());
+           
         }while(time!=9);
     }
 }
