@@ -15,9 +15,9 @@ class GameFunction
     int bool1=0;
     int bool2=0;
     int set=1;
-    char Blocknumber;
-    char Player;
-    String row0="";
+    char blocknumber;
+    char player;
+    StringBuilder row0=new StringBuilder("");
     String row1="";
     String row2="";
 
@@ -100,7 +100,7 @@ class GameFunction
        for (int i = 0; i < 3; i++) {
            for (int j = 0; j < 3; j++) {
                if (i == 0) {
-                   row0 = row0 + t[i][j];
+                   row0.append(t[i][j]);
 
                } else if (i == 1) {
                    row1 = row1 + t[i][j];
@@ -109,8 +109,8 @@ class GameFunction
                }
 
            }
-
-           if (row0.equals("xxx")) {
+           String r0=row0.toString();
+           if (r0.equals("xxx")) {
                bool=1;
 
            } else if (row0.equals("ooo")) {
@@ -178,9 +178,9 @@ class GameFunction
         do{
 
             log.info("Enter Block Number");
-            Blocknumber=input.next().charAt(0);
+            blocknumber=input.next().charAt(0);
             log.info("Enter X or O");
-            Player=input.next().charAt(0);
+            player=input.next().charAt(0);
             for (int i=0;i<3;i++) {
                 for (int j = 0; j < 3; j++) {
                     if (t[i][j] == Blocknumber) {
@@ -231,7 +231,7 @@ class GameFunction
 
 
             time++;
-            row0="";
+            row0.delete(0,r.length());
             row1="";
             row2="";
             dia1="";
