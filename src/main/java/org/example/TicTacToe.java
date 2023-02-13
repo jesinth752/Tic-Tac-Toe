@@ -35,11 +35,6 @@ class GameFunction
     String c0;
     String c1;
     String c2;
- 
-
-    String col0="";
-    String col1="";
-    String col2="";
     String cc;
     String plx="Player X Wins !";
     String plo=" Player O Wins !";
