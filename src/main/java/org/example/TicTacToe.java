@@ -222,9 +222,9 @@ class GameFunction
             int k=checkRows();
             resultant(k);
             int l=checkDiagonal();
-             resultant(k);
+             resultant(l);
             int m=checkCols();
-             resultant(k);
+             resultant(m);
           
             if(bool==0 && bool1==0 && bool2==0)
             {
