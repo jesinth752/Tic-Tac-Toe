@@ -215,7 +215,7 @@ class GameFunction
                 log.info("Player X Wins !");
                 break;
             }
-            else if(checkCols()==1)
+            else if(checkCols()==2)
             {
                 log.info("Player O Wins !");
                 break;
