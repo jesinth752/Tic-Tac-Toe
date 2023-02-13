@@ -28,6 +28,8 @@ class GameFunction
     String col1="";
     String col2="";
     String cc;
+    String plx="Player X Wins !";
+    String plo=" Player O Wins !";
 
 
     GameFunction() {
@@ -192,32 +194,32 @@ class GameFunction
 
             if(checkRows()==1)
             {
-                log.info("Player X Wins !");
+                log.info(plx);
                 break;
             }
             else if(checkRows()==2)
             {
-                log.info(" Player O Wins !");
+                log.info(plo);
                 break;
             }
             if(checkDiagonal()==1)
             {
-                log.info("Player X Wins !");
+                log.info(plx);
                 break;
             }
             else if(checkDiagonal()==2)
             {
-                log.info("Player O Wins !");
+                log.info(plo);
                 break;
             }
             if(checkCols()==1)
             {
-                log.info("Player X Wins !");
+                log.info(plx);
                 break;
             }
             else if(checkCols()==2)
             {
-                log.info("Player O Wins !");
+                log.info(plo);
                 break;
             }
             if(bool==0 && bool1==0 && bool2==0)
