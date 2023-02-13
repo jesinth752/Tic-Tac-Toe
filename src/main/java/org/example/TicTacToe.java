@@ -190,6 +190,19 @@ class GameFunction
        String dd=dg.toString();
      log.info(dd);
    }
+    void resultant(int k)
+    {
+        if(k==1)
+        {
+            log.info(plx);
+        }
+        else if(k==2)
+        {
+            log.info(plo);
+        }
+    }
+     
+    
     void fillGameBoard()
     {
         do{
@@ -206,37 +219,13 @@ class GameFunction
                 }
             }
             displayGame();
-
-            if(checkRows()==1)
-            {
-                log.info(plx);
-                break;
-            }
-            else if(checkRows()==2)
-            {
-                log.info(plo);
-                break;
-            }
-            if(checkDiagonal()==1)
-            {
-                log.info(plx);
-                break;
-            }
-            else if(checkDiagonal()==2)
-            {
-                log.info(plo);
-                break;
-            }
-            if(checkCols()==1)
-            {
-                log.info(plx);
-                break;
-            }
-            else if(checkCols()==2)
-            {
-                log.info(plo);
-                break;
-            }
+            int k=checkRows();
+            resultant(k);
+            int l=checkDiagonal();
+             resultant(k);
+            int m=checkCols();
+             resultant(k);
+          
             if(bool==0 && bool1==0 && bool2==0)
             {
                 set++;
